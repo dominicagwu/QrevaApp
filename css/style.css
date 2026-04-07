@@ -56,7 +56,8 @@ img, svg {
 
 .nav-links a {
   text-decoration: none;
-  color: #072D4B;
+  color: #D9D9D9;
+  opacity: 0.9;
   font-weight: 500;
   font-size: 0.95rem;
   transition: color 0.3s ease;
@@ -231,11 +232,10 @@ display: flex;
   font-family: 'Urbanist', sans-serif;
   font-weight: 400;             
   font-size: 20px;              
-  line-height: 90%;            
-  letter-spacing: 0em;          
+  line-height: 152%;    
+  letter-spacing: -0.02em;          
   color: #808C91;               
-  max-width: 520px;            
-  margin-top: 14px; 
+  
 }
 
 .hero-subtitle .mobile-break {
@@ -362,14 +362,14 @@ display: flex;
 
 
 
-/* -------Features Section------------ */
+/* ----Features Section----- */
 .features {
   width: 100%;
   max-width: 1440px;
   margin-inline: auto;
   padding: 80px;
-  display: flex;           /* or grid depending on layout */
-  flex-direction: column;  /* adjust if row layout */
+  display: flex;           
+  flex-direction: column;  
   gap: 10px;
   box-sizing: border-box;
   
@@ -380,8 +380,8 @@ display: flex;
   width: 100%;
   max-width: 1280px;
   margin-inline: auto;
-  display: flex;           /* or grid depending on layout */
-  flex-direction: column;  /* adjust if row layout */
+  display: flex;           
+  flex-direction: column;  
   gap: 28px;
   box-sizing: border-box;
    
@@ -439,21 +439,21 @@ display: flex;
 
 .features-header h1 {
   font-family: 'Urbanist', sans-serif;
-    font-weight: 600;               /* SemiBold */
-    font-size: 40px;                /* Exact */
-    line-height: 120%;              /* Figma line height */
-    letter-spacing: -0.04em;        /* -4% tracking */
-    color: #084059;                 /* Figma Secondary Indigo */
+    font-weight: 600;               
+    font-size: 40px;                
+    line-height: 120%;              
+    letter-spacing: -0.04em;        
+    color: #084059;                 
     margin: 0; 
 }
 
 .features-header p {
   font-family: 'General Sans', sans-serif;
-    font-weight: 400;          /* Regular */
-    font-size: 16px;           /* Exact Figma size */
-    line-height: 145%;         /* Exact Figma line height */
-    letter-spacing: 0;         /* Figma 0% */
-    color: #808C91;            /* Placeholder — send the color screenshot for exact value */
+    font-weight: 400;          
+    font-size: 16px;           
+    line-height: 145%;         
+    letter-spacing: 0;         
+    color: #808C91;            
     margin: 8px 0 0 0; 
 }
 
@@ -818,30 +818,32 @@ display: flex;
     margin-left: -23px;
 }
 
-/* ============================
-   RIGHT IMAGE
-============================ */
+/* ====RIGHT IMAGE===== */
 .how-image img {
-    width: 400px;
-    height: auto;
-    user-select: none;
-    float: left;
-    margin-right: 16px;
+  width: 400px;
+  height: auto;
+  user-select: none;
+  float: left;
+  margin-right: 16px;
 
-    /* Animation */
-    opacity: 0; /* start hidden */
-    transform: translateX(-50px); /* start slightly left */
-    animation: slideIn 1s forwards; /* run animation for 1 second */
-    animation-delay: 0.3s; /* optional delay */
+  /* Animation */
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  will-change: transform, opacity;
 }
 
 @keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateX(0); /* end at normal position */
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-
 
 /* ---------- Tablet (≤1024px) ---------- */  
 /* ============================
@@ -960,7 +962,7 @@ display: flex;
   }
 
   .step-description {
-     max-width: 360px;          /* forces earlier line breaks */
+     max-width: 360px;          
     word-break: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
@@ -1047,7 +1049,7 @@ display: flex;
 .quote {
   font-size: 18px;
   line-height: 1.6;
-  color: #0f172a;
+  color: #808C91;
 }
 
 /* Author */
@@ -1522,7 +1524,7 @@ display: flex;
   background: #F1F4F8;
 }
 
-/* ---------------- IMAGE ---------------- */
+/* -- IMAGE --- */
 
 .contact-image {
   margin: 30px 0 50px;
@@ -1537,7 +1539,7 @@ display: flex;
   display: block;
 }
 
-/* ---------------- CARDS ---------------- */
+/* --- CARDS ---- */
 
 .contact-card,
 .contact-card2 {
@@ -1704,7 +1706,7 @@ display: flex;
 
 .policy-container {
   margin: auto;
-  max-width: 1200px; /* prevent over-stretch on large screens */
+  max-width: 1200px; 
 }
 
 /* Header */
@@ -1727,7 +1729,7 @@ display: flex;
   display: flex;
   align-items: center;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  flex-wrap: wrap; /* allows buttons to wrap on small screens */
+  flex-wrap: wrap; 
 }
 
 .policy-btn:hover {
@@ -1743,16 +1745,24 @@ display: flex;
 }
 
 /* Header text */
-.policy-header h1 {
+
+/* .policy-header h1 {
   font-size: 32px;
   margin-bottom: 6px;
-}
+} */
 
-.policy-header p {
-  font-size: 14px;
-  color: #6b7280;
-}
 
+.policy-header p{
+  font-family: 'General Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: #808C91;
+  vertical-align: middle;
+
+}
 /* Image */
 .policy-image img {
   width: 100%;
@@ -1774,15 +1784,37 @@ display: flex;
   margin-bottom: 26px;
 }
 
-.policy-block h4 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: #084059;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+.policy-content p{
+  font-family: 'General Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.66;
+  letter-spacing: 0;
+  color:#808C91;
+
 }
+.outline-title li{
+  font-family: 'General Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.66;
+  letter-spacing: 0;
+  color:#808C91;
+}
+
+
+
+.outline li {
+  color: #084059;
+  font-size: 16px;
+  letter-spacing: 0;
+  color:#808C91;
+   font-style: normal;
+}
+
+
 
 .policy-block .number {
   width: 20px;
@@ -1794,13 +1826,17 @@ display: flex;
   justify-content: center;
 }
 
-.policy-block p,
-.outline li,
-.policy-list li {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #4b5563;
+.policy-block h4{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: #084059;
+  margin-bottom: 10px;
+
 }
+
+
 
 /* Outline */
 .outline {
@@ -1811,7 +1847,7 @@ display: flex;
   font-weight: 600;
   margin-bottom: 6px;
   color: #084059;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .outline ul {
@@ -1822,11 +1858,16 @@ display: flex;
 
 .policy-list {
   margin-top: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   padding-left: 18px;
+  font-size: 18px;
+  letter-spacing: 0;
+  color:#808C91;
+   font-style: normal;
 }
 
-/* ------------------ Media Queries ------------------ */
+
+/* -- Media Queries -- */
 
 /* Tablet: 601px - 1024px */
 @media (max-width: 1024px) {
